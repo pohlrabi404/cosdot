@@ -21,7 +21,10 @@ return {
     -- session
     {
         "rmagatti/auto-session",
-        cmd = "SessionRestore",
+        cmd = { "SessionRestore" },
+        opts = {
+            suppress_dirs = { "~/", "~/Downloads/", "/" },
+        },
     },
 
     -- treesitter
@@ -86,7 +89,7 @@ return {
         "github/copilot.vim",
         cmd = "Copilot",
         build = ":Copilot auth",
-        event = "BufWinEnter",
+        event = "User FilePost",
         init = function()
             vim.g.copilot_no_maps = true
         end,
@@ -101,6 +104,29 @@ return {
                     end,
                 })
             end
+        end,
+    },
+    {
+        'milanglacier/minuet-ai.nvim',
+        lazy = false,
+        config = function()
+            require('minuet').setup {
+                provider = 'codestral',
+                n_completions = 1,
+                context_window = 512,
+                provider_options = {
+                    codestral = {
+                        model = 'codestral-latest',
+                        api_key = function() return "t9ALGFmWUj4x2JjUYBNsoYAJmg2FapX5" end,
+                        end_point = 'https://codestral.mistral.ai/v1/fim/completions',
+                        stream = true,
+                        optional = {
+                            max_tokens = 256,
+                            stop = { "\n\n" },
+                        },
+                    },
+                },
+            }
         end,
     },
 }
