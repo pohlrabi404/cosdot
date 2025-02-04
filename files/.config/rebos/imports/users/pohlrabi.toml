@@ -1,0 +1,26 @@
+[managers.system]
+items = [
+	# tldr / man page
+	"tealdeer",
+
+	# browser
+	"qutebrowser",
+
+	# git
+	"lazygit",
+
+	# file browser
+	"yazi",
+	"fzf",
+
+	# zsh theme and plugins
+	"starship",
+
+	# font
+	"ttf-firacode-nerd",
+
+    # nodejs
+    "nodejs",
+    "unzip",
+    "npm",
+]

@@ -1,0 +1,17 @@
+# --------------------- #
+#    Generation File    #
+# --------------------- #
+
+imports = [
+	"system",
+	"users/pohlrabi",
+]
+
+[managers.system]
+items = []
+
+[managers.flatpak]
+items = []
+
+[managers.cargo]
+items = []

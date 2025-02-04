@@ -3,6 +3,7 @@ sudo pacman -Syu --noconfirm
 
 # remove all unneccessary packages
 sudo pacman -Rs cachyos-fish-config --noconfirm
+sudo pacman -Rs plymouth cachyos-plymouth-theme --noconfirm
 
 # paru
 sudo pacman -S paru --noconfirm
@@ -21,15 +22,38 @@ rebos setup
 cd ~/
 git clone https://github.com/pohlrabi404/cosdot.git .dotfiles
 cd .dotfiles
-stow .
+stow files
 
 rebos gen commit "init"
 rebos gen current build
 
+# keyd
+mkdir -p /etc/keyd/
+sudo cp keyd.conf /etc/keyd/
+sudo systemctl enable keyd
+sudo systemctl start keyd
+sudo keyd reload
+
+# greetd
+sudo rm -rf /etc/greetd
+sudo mkdir -p /etc/greetd
+sudo cp -r greetd /etc/greetd
+sudo systemctl enable greetd
+sudo usermod -a -G video greeter
+sudo chown greeter /etc/greetd
+
+# tldr
+tldr --update
+
 # change to zsh for new user
 sudo chsh -s /usr/bin/zsh
-sudo usermod -G wheel -s /bin/zsh $USER
+sudo usermod -a -G wheel,audio,video -s /bin/zsh $USER
 
 # scheduler thing
 systemctl disable --now ananicy-cpp
 dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.StartScheduler string:scx_lavd uint32:0
+
+# cursors
+cp -r ./icons ~/.local/share/
+
+reboot

@@ -1,0 +1,53 @@
+[managers.system]
+items = [
+	# keymap
+	"keyd",
+
+	# editor
+	"neovim",
+	
+	# ssh
+	"openssh",
+
+	# shell
+	"zsh",
+	"zsh-syntax-highlighting",
+	"zsh-autocomplete",
+	"zsh-autosuggestions",
+
+	# kernel scheduler
+	"scx-scheds-git",
+
+	# system audio
+	"sof-firmware",
+
+	# clipboard
+	"wl-clipboard",
+
+	# wm
+	"hyprland",
+	"hyprpolkitagent",
+
+	"greetd-regreet-git",
+
+	"qt5-wayland",
+	"qt6-wayland",
+
+	"dunst",
+
+	## volume
+	"pipewire",
+	"wireplumber",
+	"playerctl",
+    "alsa-firmware",
+    "alsa-utils",
+
+	## brightness
+	"brightnessctl",
+
+	## terminal emulator
+	"kitty",
+
+	## cursor
+	"hyprcursor",
+]
