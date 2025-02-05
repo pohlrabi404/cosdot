@@ -27,13 +27,6 @@ stow files
 rebos gen commit "init"
 rebos gen current build
 
-# keyd
-mkdir -p /etc/keyd/
-sudo cp keyd.conf /etc/keyd/
-sudo systemctl enable keyd
-sudo systemctl start keyd
-sudo keyd reload
-
 # greetd
 sudo rm -rf /etc/greetd
 sudo mkdir -p /etc/greetd
@@ -55,5 +48,9 @@ dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.L
 
 # cursors
 cp -r ./icons ~/.local/share/
+
+sudo rm -r /etc/anyrun
+
+ya pack -a bennyyip/gruvbox-dark
 
 reboot

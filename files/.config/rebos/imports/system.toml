@@ -21,33 +21,21 @@ items = [
 	# system audio
 	"sof-firmware",
 
-	# clipboard
-	"wl-clipboard",
-
-	# wm
-	"hyprland",
-	"hyprpolkitagent",
-
-	"greetd-regreet-git",
-
-	"qt5-wayland",
-	"qt6-wayland",
-
-	"dunst",
+    # display manager
+	# "greetd-regreet-git",
+    "greetd-tuigreet",
 
 	## volume
 	"pipewire",
+    "pipewire-audio",
+    "pipewire-alsa",
+    "pipewire-pulse",
 	"wireplumber",
 	"playerctl",
     "alsa-firmware",
-    "alsa-utils",
 
-	## brightness
-	"brightnessctl",
+    # file system
+    "fuse3",
+    "fuse2",
 
-	## terminal emulator
-	"kitty",
-
-	## cursor
-	"hyprcursor",
 ]

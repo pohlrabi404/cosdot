@@ -1,3 +1,6 @@
+[terminal]
+vt = 1
+
 [default_session]
-command = "Hyprland --config /etc/greetd/hyprland.conf"
+command = "tuigreet -t -r --remember-session --asterisks --theme text=yellow;container=black;border=yellow;prompt=green;input=purple;action=yellow --cmd Hyprland"
 user = "greeter"

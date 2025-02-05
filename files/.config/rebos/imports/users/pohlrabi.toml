@@ -23,4 +23,44 @@ items = [
     "nodejs",
     "unzip",
     "npm",
+    "go",
+
+    # app runner
+    "anyrun-git",
+
+    # theme
+    "ags-hyprpanel-git",
+    ## dependencies
+    "swww",
+	"brightnessctl",
+    "pacman-contrib",
+    "power-profiles-daemon",
+    "grimblast",
+    "gpu-screen-recorder",
+    "hyprpicker",
+    "hypridle",
+    "btop",
+    "matugen",
+    "libgtop",
+    "bluez",
+    "bluez-utils",
+    "networkmanager",
+    "dart-sass",
+	"wl-clipboard",
+    "upower",
+    "gvfs",
+    "xdg-desktop-portal-hyprland",
+
+	# wm
+	"hyprland",
+    ## dependencies
+	"hyprpolkitagent",
+	"qt5-wayland",
+	"qt6-wayland",
+	"hyprcursor",
+	"kitty",
+
+    # keybind
+    "wev",
+    "google-chrome",
 ]

@@ -108,7 +108,7 @@ return {
     },
     {
         'milanglacier/minuet-ai.nvim',
-        lazy = false,
+        -- lazy = false,
         config = function()
             require('minuet').setup {
                 provider = 'codestral',

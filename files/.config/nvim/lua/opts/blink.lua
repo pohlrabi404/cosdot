@@ -71,7 +71,7 @@ return {
     },
 
     sources = {
-        default = { "lsp", "path", "snippets", "buffer", "copilot", "minuet" },
+        default = { "lsp", "path", "snippets", "buffer", "minuet" },
         providers = {
             -- lazydev = {
             -- 	name = "LazyDev",
@@ -84,20 +84,25 @@ return {
                 async = false,
                 timeout_ms = 2000,
             },
-            copilot = {
-                name = "copilot",
-                module = "blink-copilot",
-                score_offset = 5,
-                async = true,
-                opts = {
-                    max_completions = 3,
-                    max_attemps = 4,
-                },
-            },
+            -- copilot = {
+            --     name = "copilot",
+            --     module = "blink-copilot",
+            --     score_offset = 100,
+            --     async = true,
+            --     opts = {
+            --         max_completions = 3,
+            --         max_attemps = 4,
+            --     },
+            -- },
             minuet = {
                 name = "minuet",
                 module = "minuet.blink",
-                score_offset = 8,
+                score_offset = 150,
+                async = true,
+                opts = {
+                    max_attemps = 4,
+                    max_completions = 3,
+                },
             },
         },
     },
