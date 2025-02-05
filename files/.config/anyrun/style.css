@@ -30,6 +30,7 @@ entry#entry {
 }
 
 list#main {
+    padding: 0px 24px;
     background-color: transparent;
 }
 
@@ -37,6 +38,8 @@ list#main {
     background-color: transparent;
     padding-bottom: 4px;
 }
+
+label#plugin {}
 
 #match {
     font-size: 1.1rem;
@@ -46,4 +49,20 @@ list#main {
 #match:selected,
 #match:hover {
     background-color: @selected-bg;
+    color: @selected-fg;
+}
+
+#match:selected label#info,
+#match:hover label#info {
+    color: @selected-fg;
+}
+
+#match:selected label #match-desc,
+#match:hover label#match-desc {
+    color: alpha(@selected-fg, 0.9);
+}
+
+#match label#info {
+    color: transparent;
+    color: @fg;
 }
