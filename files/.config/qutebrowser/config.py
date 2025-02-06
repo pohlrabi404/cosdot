@@ -69,6 +69,11 @@ base0E = "#d3869b"
 base0F = "#d65d0e"
 # set qutebrowser colors
 
+# darkmode
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.policy.images = "smart"
+c.colors.webpage.darkmode.algorithm = "lightness-cielab"
+
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
 c.colors.completion.fg = base05
