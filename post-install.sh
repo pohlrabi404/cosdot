@@ -56,9 +56,9 @@ ya pack -a bennyyip/gruvbox-dark
 # language environment vars
 cat /etc/environment > tmp
 cat <<EOF >> tmp 
-GTK_IM_MODULE=ibus
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 EOF
 sudo rm /etc/environment
 sudo mv tmp /etc/environment
@@ -71,5 +71,9 @@ EOF
 sudo rm /etc/locale.gen
 sudo mv tmp /etc/locale.gen
 sudo locale-gen
+
+# nvim base46 theme
+mkdir -p ~/.local/share/nvim/lazy/base46/themes
+cp files/.config/nvim/lua/base46/themes/gruvbox_mod.lua ~/.local/share/nvim/lazy/base46/themes/gruvbox_mod.lua
 
 reboot

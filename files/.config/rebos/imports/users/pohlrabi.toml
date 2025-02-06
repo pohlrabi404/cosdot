@@ -71,6 +71,9 @@ items = [
     "yt-dlp",
 
     # japanese input
-    "ibus",
-    "ibus-mozc",
+    "fcitx5-im",
+    "fcitx5-mozc",
+
+    # flex
+    "fastfetch",
 ]

@@ -52,6 +52,7 @@ return {
     {
         "stevearc/conform.nvim",
         event = { "User FilePost" },
+        ---@diagnostic disable-next-line: different-requires
         opts = require("opts.conform"),
         config = require("configs.conform"),
     },
