@@ -69,4 +69,8 @@ items = [
     "mpv",
     "svp-bin",
     "yt-dlp",
+
+    # japanese input
+    "ibus",
+    "ibus-mozc",
 ]

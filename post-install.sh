@@ -53,4 +53,23 @@ sudo rm -r /etc/anyrun
 
 ya pack -a bennyyip/gruvbox-dark
 
+# language environment vars
+cat /etc/environment > tmp
+cat <<EOF >> tmp 
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+EOF
+sudo rm /etc/environment
+sudo mv tmp /etc/environment
+
+# locale
+cat /etc/locale.gen > tmp
+cat <<EOF >> tmp
+ja_JP.UTF-8 UTF-8  
+EOF
+sudo rm /etc/locale.gen
+sudo mv tmp /etc/locale.gen
+sudo locale-gen
+
 reboot

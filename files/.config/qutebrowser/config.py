@@ -39,7 +39,9 @@ c.downloads.remove_finished = 10000
 
 c.auto_save.session = True
 
-c.fonts.default_size = "16pt"
+c.fonts.default_size = "14pt"
+c.fonts.hints = "bold 10pt default_family"
+c.fonts.keyhint = "bold 10pt default_family"
 
 c.keyhint.delay = 100
 
