@@ -38,7 +38,22 @@ return {
     -- fzf-lua
     {
         "ibhagwan/fzf-lua",
-        opts = {},
+        cmd = "FzfLua",
+        config = function(_, opts)
+            require("fzf-lua").setup(opts)
+            ExeAutoCmd("User", {
+                pattern = "Fzf",
+            })
+        end,
+        opts = {
+            winopts = {
+                height = 0.80,
+                width = 0.80,
+                row = 0.50,
+                col = 0.50,
+            },
+            preview = {},
+        },
     },
 
     -- git

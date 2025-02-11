@@ -22,12 +22,22 @@ require("lazy").setup({
     defaults = {
         lazy = true,
     },
+    checker = {
+        enabled = true,
+    },
+    change_detection = {
+        notify = false,
+    },
     ui = {
         size = {
             width = 0.7,
             height = 0.7,
         },
         border = "rounded",
+    },
+    profiling = {
+        loader = true,
+        require = true,
     },
     performance = {
         cache = {
@@ -36,7 +46,7 @@ require("lazy").setup({
         reset_package = true,
         rtp = {
             reset = true,
-            disabled_plugin = {
+            disabled_plugins = {
                 "2html_plugin",
                 "tohtml",
                 "getscript",

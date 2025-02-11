@@ -3,9 +3,6 @@ items = [
 	# tldr / man page
 	"tealdeer",
 
-	# browser
-	"qutebrowser",
-
 	# git
 	"lazygit",
 
@@ -63,7 +60,6 @@ items = [
 
     # keybind
     "wev",
-    "google-chrome",
 
     # mpv
     "mpv",

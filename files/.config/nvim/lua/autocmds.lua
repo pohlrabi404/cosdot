@@ -67,6 +67,19 @@ AutoCmd("InsertEnter", {
 })
 
 local map = vim.keymap.set
+AutoCmd("User", {
+    pattern = "Fzf",
+    callback = function()
+        local fzf = require("fzf-lua")
+        map("n", "<leader>fg", function()
+            fzf.live_grep()
+        end, { desc = "[f]iles [g]rep" })
+        map("n", "<leader>fb", function()
+            fzf.buffers()
+        end, { desc = "[f]iles [b]uffers" })
+    end,
+})
+
 AutoCmd("LspAttach", {
     group = AutoGroup("lsp-attach-mapping", { clear = true }),
     callback = function()
