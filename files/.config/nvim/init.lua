@@ -9,9 +9,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
-AutoCmd = vim.api.nvim_create_autocmd
-AutoGroup = vim.api.nvim_create_augroup
-ExeAutoCmd = vim.api.nvim_exec_autocmds
+Autocmd = vim.api.nvim_create_autocmd
+Autogroup = vim.api.nvim_create_augroup
+Execmd = vim.api.nvim_exec_autocmds
 
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 

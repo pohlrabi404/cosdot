@@ -1,6 +1,6 @@
 -- user event that loads after UIEnter + only if file buf is there
-AutoCmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
-    group = AutoGroup("NvFilePost", { clear = true }),
+Autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
+    group = Autogroup("NvFilePost", { clear = true }),
     callback = function(args)
         local file = vim.api.nvim_buf_get_name(args.buf)
         local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
@@ -10,11 +10,11 @@ AutoCmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
         end
 
         if file ~= "" and buftype ~= "nofile" and vim.g.ui_entered then
-            ExeAutoCmd("User", { pattern = "FilePost", modeline = false })
+            Execmd("User", { pattern = "FilePost", modeline = false })
             vim.api.nvim_del_augroup_by_name("NvFilePost")
 
             vim.schedule(function()
-                ExeAutoCmd("FileType", {})
+                Execmd("FileType", {})
 
                 if vim.g.editorconfig then
                     require("editorconfig").config(args.buf)
@@ -24,9 +24,9 @@ AutoCmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end,
 })
 
-AutoCmd("User", {
+Autocmd("User", {
     pattern = "FilePost",
-    group = AutoGroup("OneTime", { clear = true, }),
+    group = Autogroup("OneTime", { clear = true, }),
     callback = function()
         -- leap
         require("leap").create_default_mappings()
@@ -60,14 +60,14 @@ AutoCmd("User", {
     end,
 })
 
-AutoCmd("InsertEnter", {
+Autocmd("InsertEnter", {
     callback = function()
         require("nvim-autopairs").setup({})
     end,
 })
 
 local map = vim.keymap.set
-AutoCmd("User", {
+Autocmd("User", {
     pattern = "Fzf",
     callback = function()
         local fzf = require("fzf-lua")
@@ -80,8 +80,8 @@ AutoCmd("User", {
     end,
 })
 
-AutoCmd("LspAttach", {
-    group = AutoGroup("lsp-attach-mapping", { clear = true }),
+Autocmd("LspAttach", {
+    group = Autogroup("lsp-attach-mapping", { clear = true }),
     callback = function()
         local builtin = require("fzf-lua")
         map("n", "gd", builtin.lsp_definitions, { desc = "[g]oto [d]efinitions" })

@@ -5,6 +5,11 @@ return {
     "nvchad/ui",
     "nvchad/volt",
     { "nvchad/base46", build = function() require("base46").load_all_highlights() end },
+    {
+        "stevearc/dressing.nvim",
+        event = { "User FilePost" },
+        opts = {},
+    },
 
     -- indent
     "lukas-reineke/indent-blankline.nvim",
@@ -41,7 +46,7 @@ return {
         cmd = "FzfLua",
         config = function(_, opts)
             require("fzf-lua").setup(opts)
-            ExeAutoCmd("User", {
+            Execmd("User", {
                 pattern = "Fzf",
             })
         end,
