@@ -6,20 +6,14 @@ sudo pacman -Rs cachyos-fish-config --noconfirm
 sudo pacman -Rs plymouth cachyos-plymouth-theme --noconfirm
 
 # paru
-sudo pacman -S paru --noconfirm
-
-# git (already with paru but for completion's sakes)
-sudo pacman -S git --noconfirm
-
-# stow
-sudo pacman -S stow --noconfirm
+sudo pacman -S paru git stow --noconfirm
 
 # rebos
 sudo paru -S rebos-git --noconfirm
 rebos setup
 
 # clone git repo
-cd ~/
+cd $HOME/
 git clone https://github.com/pohlrabi404/cosdot.git .dotfiles
 cd .dotfiles
 stow files
@@ -47,7 +41,7 @@ systemctl disable --now ananicy-cpp
 dbus-send --system --print-reply --dest=org.scx.Loader /org/scx/Loader org.scx.Loader.StartScheduler string:scx_lavd uint32:0
 
 # cursors
-cp -r ./icons ~/.local/share/
+cp -r ./icons $HOME/.local/share/
 
 sudo rm -r /etc/anyrun
 
@@ -73,7 +67,7 @@ sudo mv tmp /etc/locale.gen
 sudo locale-gen
 
 # nvim base46 theme
-mkdir -p ~/.local/share/nvim/lazy/base46/themes
-cp files/.config/nvim/lua/base46/themes/gruvbox_mod.lua ~/.local/share/nvim/lazy/base46/themes/gruvbox_mod.lua
+mkdir -p $HOME/.local/share/nvim/lazy/base46/themes
+cp files/.config/nvim/lua/base46/themes/gruvbox_mod.lua $HOME/.local/share/nvim/lazy/base46/themes/gruvbox_mod.lua
 
 reboot

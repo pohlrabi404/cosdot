@@ -2,15 +2,11 @@
 items = [
 	# browser
 	"qutebrowser",
-    "google-chrome",
-
-    # qmk
-    "python-pip",
-    "libffi",
-    "qmk",
 
     # vial        
     "vial-appimage",
-     
-    "obsidian",
+
+    # editor
+    "neovim",
+    "emacs",
 ]

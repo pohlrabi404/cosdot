@@ -1,11 +1,5 @@
 [managers.system]
 items = [
-	# keymap
-	"keyd",
-
-	# editor
-	"neovim",
-	
 	# ssh
 	"openssh",
 
@@ -22,7 +16,6 @@ items = [
 	"sof-firmware",
 
     # display manager
-	# "greetd-regreet-git",
     "greetd-tuigreet",
 
 	## volume
@@ -37,4 +30,7 @@ items = [
     # file system
     "fuse3",
     "fuse2",
+
+    # dependencies for wayland
+    "libffi",
 ]

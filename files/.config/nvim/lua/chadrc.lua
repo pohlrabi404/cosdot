@@ -2,8 +2,8 @@ local M
 
 M = {
     base46 = {
-        theme = "vesper",
-        transparency = true,
+        theme = "gruvbox_mod",
+        transparency = false,
     },
 
     statusline = {
